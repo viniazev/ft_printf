@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 16:57:46 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/05/08 22:40:19 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/05/09 00:14:15 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	handle_format(t_format fmt, va_list *args)
 	if (fmt.type == 'X')
 		return (ft_puthex_upper(va_arg(*args, unsigned int)));
 	if (fmt.type == '%')
-		return ('%');
+		return (ft_putchar('%'));
 	return (0);
 }
 

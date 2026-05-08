@@ -14,13 +14,20 @@
 
 int	ft_putstr(char *s)
 {
-	size_t	i;
+	int	i;
 
+	if (!s)
+		return (ft_putstr("(null)"));
 	i = 0;
 	while (s[i])
 	{
 		write(1, &s[i], 1);
 		i++;
 	}
-	return (0);
+	return (i);
 }
+// int	main (void)
+// {
+// 	ft_putstr(NULL);
+// 	return (0);
+// }
