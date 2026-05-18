@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                     :+:      :+:    :+:   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/30 15:08:09 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/05/05 16:49:07 by vinida-s         ###   ########.fr       */
+/*   Created: 2026/05/18 15:12:46 by vinida-s          #+#    #+#             */
+/*   Updated: 2026/05/18 16:49:38 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_putunsigned(unsigned int n)
 {
-	long int	num;
-	int			total;
+	int	total;
 
-	num = n;
 	total = 0;
-	if (num < 0)
+	if (n <= 9)
+		total += ft_putchar(n + '0');
+	if (n > 9)
 	{
-		total += ft_putchar('-');
-		num *= -1;
-	}
-	if (num <= 9)
-		total += ft_putchar(num + '0');
-	else
-	{
-		total += ft_putnbr(num / 10);
-		total += ft_putchar((num % 10) + '0');
+		total += ft_putunsigned(n / 10);
+		total += ft_putchar((n % 10) + '0');
 	}
 	return (total);
 }
 // #include <stdio.h>
-// int	main(void)
+
+// int main(void)
 // {
-// 	int n = 0;
-// 	int	num;
-// 	num = ft_putnbr(n);
-// 	printf("\n%d", num);
-// 	return (0);
+//     unsigned int num = 52515342;
+//     int n;
+//     n = ft_putunsigned(num);
+//     printf("\n%d", n);
+//     return (0);
 // }

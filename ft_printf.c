@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 16:55:00 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/05/08 23:03:57 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/05/18 17:54:28 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	i = 0;
 	count = 0;
+	if (!format)
+		return (0);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			i += parse_format(format + i, 0, &fmt);
+			parse_format(format, &i, &fmt);
 			count += handle_format(fmt, &args);
 		}
 		else

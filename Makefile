@@ -12,6 +12,8 @@ FILES = ft_printf.c\
 	ft_strlen.c\
 	ft_isdigit.c\
 	ft_puthex.c\
+	ft_putptr.c\
+	ft_putunsigned.c\
 	handlers.c\
 	parser.c
 OBJ = $(FILES:.c=.o)
@@ -29,5 +31,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 re: fclean all
-
-.PHONY: all clean fclean re
+comp: all clean
+	cc testsuit.c libftprintf.a
+.PHONY: all clean fclean re comp

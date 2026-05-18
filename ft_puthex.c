@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 16:58:28 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/05/09 00:06:35 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/05/18 17:40:34 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,44 @@
 int	ft_puthex_lower(unsigned int n)
 {
 	char	*str;
+	int		total;
 
 	str = "0123456789abcdef";
-	while (n >= 16)
+	total = 0;
+	if (n >= 16)
 	{
-		ft_putchar(str[n % 16]);
-		return (ft_puthex_lower(n / 16));
+		total += ft_puthex_lower(n / 16);
+		total += ft_putchar(str[n % 16]);
 	}
-	return (ft_putchar(str[n % 16]));
+	else
+	{
+		total += ft_putchar(str[n % 16]);
+	}
+	return (total);
 }
 
 int	ft_puthex_upper(unsigned int n)
 {
 	char	*str;
+	int		total;
 
 	str = "0123456789ABCDEF";
-	while (n >= 16)
+	total = 0;
+	if (n >= 16)
 	{
-		ft_putchar(str[n % 16]);
-		return (ft_puthex_upper(n / 16));
+		total += ft_puthex_upper(n / 16);
+		total += ft_putchar(str[n % 16]);
 	}
-	return (ft_putchar(str[n % 16]));
+	else
+	{
+		total += ft_putchar(str[n % 16]);
+	}
+	return (total);
 }
 
 // int	main(void)
 // {
-// 	unsigned int	i = -27364;
+// 	unsigned int i = 234;
 
 // 	ft_puthex_upper(i);
 // 	write(1, "\n", 1);
