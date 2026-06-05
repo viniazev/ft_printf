@@ -6,13 +6,13 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 16:58:28 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/05/18 17:40:34 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/05/25 21:21:12 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex_lower(unsigned int n)
+int	ft_puthex_lower(unsigned long n)
 {
 	char	*str;
 	int		total;
@@ -31,7 +31,7 @@ int	ft_puthex_lower(unsigned int n)
 	return (total);
 }
 
-int	ft_puthex_upper(unsigned int n)
+int	ft_puthex_upper(unsigned long n)
 {
 	char	*str;
 	int		total;

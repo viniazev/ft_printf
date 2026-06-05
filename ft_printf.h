@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 20:48:20 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/05/18 16:49:52 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/05/25 21:21:33 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 typedef struct s_format
 {
@@ -28,6 +29,7 @@ typedef struct s_format
 	int		hash;
 	char	type;
 }			t_format;
+
 typedef struct s_map
 {
 	char	type;
@@ -38,8 +40,8 @@ int			ft_printf(const char *format, ...);
 int			ft_putchar(char c);
 int			ft_putnbr(int n);
 int			ft_putstr(char *s);
-int			ft_puthex_lower(unsigned int n);
-int			ft_puthex_upper(unsigned int n);
+int			ft_puthex_lower(unsigned long n);
+int			ft_puthex_upper(unsigned long n);
 int			ft_putunsigned(unsigned int n);
 int			ft_putptr(void *ptr);
 size_t		ft_strlen(const char *s);

@@ -32,5 +32,5 @@ fclean: clean
 	$(RM) $(NAME)
 re: fclean all
 comp: all clean
-	cc testsuit.c libftprintf.a
+	cc $(CFLAGS) testsuit.c libftprintf.a
 .PHONY: all clean fclean re comp

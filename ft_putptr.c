@@ -6,7 +6,7 @@
 /*   By: vinida-s <vinida-s@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/18 15:14:35 by vinida-s          #+#    #+#             */
-/*   Updated: 2026/05/18 16:49:59 by vinida-s         ###   ########.fr       */
+/*   Updated: 2026/05/25 21:21:51 by vinida-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 int	ft_putptr(void *ptr)
 {
-	int		total;
-	char	*prefix;
-
-	prefix = "0x";
-	total = 0;
-	total += ft_putstr(prefix);
-	total += ft_puthex_lower((unsigned long)ptr);
-	return (total);
+	if (!ptr)
+		return (ft_putstr("(nil)"));
+	return ((write(1, "0x", 2)) + (ft_puthex_lower((unsigned long)ptr)));
 }
 
 // #include <stdio.h>
